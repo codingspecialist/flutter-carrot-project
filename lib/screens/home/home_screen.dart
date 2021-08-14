@@ -28,7 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
-              Get.to(DetailScreen());
+              Get.to(
+                DetailScreen(),
+                transition: Transition.rightToLeft,
+                duration: Duration(milliseconds: 500),
+              );
             },
             child: ProductItem(
               product: productList[index],
